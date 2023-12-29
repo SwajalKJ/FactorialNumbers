@@ -1,0 +1,28 @@
+#factrial of number solution 1
+
+def FactorialNum(num):
+    Factorial = 1
+    if num < 0 :
+        print("number is negative")
+    elif num == 0:
+        print("factorial of 0 is 1")
+    else:
+        for i in range(1, num + 1):
+            Factorial = Factorial * i
+        print("factorial of", num ,"is" , Factorial)
+
+FactorialNum(eval(input("enter a Number: ")))
+
+#factrial of number solution 2
+
+memo = {}
+def Factorial_Memory(n):
+    if n == 0:
+       return 1 
+    if n in memo:
+        return memo[n]
+    memo[n] = n * Factorial_Memory(n - 1)
+    return memo[n]
+
+n=(eval(input("enter a Number: ")))
+print ("Factorial of the given number is: ", Factorial_Memory(n))
